@@ -1,0 +1,4 @@
+has_assets: true
+roles:
+        web:
+                ports: 3000
