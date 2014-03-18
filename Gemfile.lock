@@ -1,3 +1,12 @@
+GIT
+  remote: git@github.com:pub-burrito/foreman.git
+  revision: 9c92afda1146ee5863018af70f60767707f54ccf
+  branch: cloudcom
+  specs:
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,6 +45,7 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     diff-lcs (1.2.5)
+    dotenv (0.10.0)
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
@@ -133,6 +143,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  foreman!
   jbuilder (~> 1.2)
   jquery-rails
   pg
