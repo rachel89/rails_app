@@ -1,49 +1,50 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '3.2.13'
 
-# Use pg as the database for Active Record
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
 gem 'pg'
-
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
- gem 'execjs'
-# # Use jquery as the JavaScript library
- gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-gem 'rails_12factor', group: :production
-
+#gem 'foreman', git: 'git@github.com:Tonkpils/foreman.git', branch: 'fix-debian-process-bug'
 gem 'foreman', :git => "git@github.com:pub-burrito/foreman.git", :branch => "cloudcom"
+gem 'clockwork'
+gem 'sidekiq'
+gem 'slim', '>= 1.3.8'
+gem 'sinatra'
+gem 'awesome_print'
+gem 'sidekiq-failures'
+gem 'syslogger'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'airbrake'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+gem 'haml-rails'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+group :test do
+  gem 'rake'
+  gem 'database_cleaner'
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+gem 'faraday'
+
+gem 'multi_json', '~> 1.0'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'zurb-foundation'
+  gem 'sass-rails', '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  gem 'therubyracer', :platforms => :ruby
+
+  gem 'uglifier', '>= 1.0.3'
+end
+
+gem 'jquery-rails'
