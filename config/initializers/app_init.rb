@@ -1,8 +1,7 @@
 Bundler.require(:default, Rails.env)
 
-
-unless defined? AppInit::RAILS_APP_DB
-	module AppInit
+unless defined? RailsApp::RAILS_APP_DB
+	module RailsApp
 
 		$db_connection_settings = {}
 		RAILS_APP_DB_URL = ENV['RAILS_APP_DB']
@@ -12,6 +11,16 @@ unless defined? AppInit::RAILS_APP_DB
 		$db_connection_uri = URI.parse(ENV['RAILS_APP_DB'])
 
 		$db_connection_settings['development'] = {
+			"adapter" => "postgresql",
+			"database" => $db_connection_uri.path.gsub('/',''),
+			"host" => $db_connection_uri.host,
+			"username" => $db_connection_uri.user,
+			"password" => $db_connection_uri.password,
+			"port" => $db_connection_uri.port,
+			"encoding" => "unicode",
+			"pool" => 25
+		}
+		$db_connection_settings['production'] = {
 			"adapter" => "postgresql",
 			"database" => $db_connection_uri.path.gsub('/',''),
 			"host" => $db_connection_uri.host,
