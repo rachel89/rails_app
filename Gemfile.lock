@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/pub-burrito/foreman.git
+  remote: git@github.com:pub-burrito/foreman.git
   revision: 9c92afda1146ee5863018af70f60767707f54ccf
   branch: cloudcom
   specs:
