@@ -8,7 +8,7 @@ unless defined? RailsApp::RAILS_APP_DB
 
 		puts "environment variable not set" if RAILS_APP_DB_URL.nil?
 
-		$db_connection_uri = URI.parse(ENV['RAILS_APP_DB'])
+		$db_connection_uri = URI.parse(URI.encode(ENV['RAILS_APP_DB'].strip))
 
 		$db_connection_settings['development'] = {
 			"adapter" => "postgresql",
